@@ -54,7 +54,7 @@ const crossFit = {
   getRandomExerciseFromWorkouts(exerciseType) {
     const exercises = this._workouts[exerciseType];
     //randomise
-    const randomIndex = Math.floor(Math.random() * (exercises.length + 1));
+    const randomIndex = Math.floor(Math.random() * exercises.length);
     return exercises[randomIndex];
   },
 
@@ -63,12 +63,68 @@ const crossFit = {
     const lift = this.getRandomExerciseFromWorkouts("lifts");
     const movement = this.getRandomExerciseFromWorkouts("movements");
 
-    return `Your main workout will be to complete the girl WOD named '${girl}'. The olympic lift you will focus on today is '${lift}'. As part of your warmup, you will complete 100 reps of '${movement}'....GO SMASH IT!'`;
+    return `Your main workout will be to complete the girl WOD named '${girl.name}'. 
+The olympic lift you will focus on today is '${lift.name}'. 
+As part of your warmup, you will complete 100 reps of '${movement.name}'`;
   },
 };
 
+//Adding of girls, movements and lifts to workout randomiser
 crossFit.addExercise("girls", "Fran");
-crossFit.addExercise("lifts", "Snatch");
-crossFit.addExercise("movements", "Press-Ups");
+crossFit.addExercise("girls", "Amanda");
+crossFit.addExercise("girls", "Eva");
+crossFit.addExercise("girls", "Kelly");
+crossFit.addExercise("girls", "Angie");
+crossFit.addExercise("girls", "Linda");
+crossFit.addExercise("girls", "Annie");
+crossFit.addExercise("girls", "Grace");
+crossFit.addExercise("girls", "Lynne");
+crossFit.addExercise("girls", "Barbara");
+crossFit.addExercise("girls", "Gwen");
+crossFit.addExercise("girls", "Maggie");
+crossFit.addExercise("girls", "Candy");
+crossFit.addExercise("girls", "Helen");
+crossFit.addExercise("girls", "Marguerita");
+crossFit.addExercise("girls", "Chelsea");
+crossFit.addExercise("girls", "Hope");
+crossFit.addExercise("girls", "Mary");
+crossFit.addExercise("girls", "Cindy");
+crossFit.addExercise("girls", "Isabel");
+crossFit.addExercise("girls", "Megan");
+crossFit.addExercise("girls", "Diane");
+crossFit.addExercise("girls", "Jackie");
+crossFit.addExercise("girls", "Nancy");
+crossFit.addExercise("girls", "Elizabeth");
+crossFit.addExercise("girls", "Karen");
+crossFit.addExercise("girls", "Nicole");
 
-console.log(crossFit.workouts);
+crossFit.addExercise("lifts", "Power Clean");
+crossFit.addExercise("lifts", "Front Squat");
+crossFit.addExercise("lifts", "Squat Clean");
+crossFit.addExercise("lifts", "Push Jerk");
+crossFit.addExercise("lifts", "Power Snatch");
+crossFit.addExercise("lifts", "Squat Snatch");
+
+crossFit.addExercise("movements", "Push Ups");
+crossFit.addExercise("movements", "Burpees");
+crossFit.addExercise("movements", "Alternating Jumping Lunges");
+crossFit.addExercise("movements", "Sit Ups");
+crossFit.addExercise("movements", "Air Squats");
+crossFit.addExercise("movements", "Pull Ups");
+crossFit.addExercise("movements", "Muscle Ups");
+crossFit.addExercise("movements", "Wall Balls");
+crossFit.addExercise("movements", "GHD Sit Ups");
+crossFit.addExercise("movements", "Man Makers");
+crossFit.addExercise("movements", "Dumbell Snatches");
+crossFit.addExercise("movements", "Toes-to-bar");
+crossFit.addExercise("movements", "Chest-to-bar");
+crossFit.addExercise("movements", "Kettlebell Swings");
+crossFit.addExercise("movements", "Alternating Squat Thrusts");
+crossFit.addExercise("movements", "Double Unders");
+crossFit.addExercise("movements", "Calorie Row");
+crossFit.addExercise("movements", "Calorie Assualt Bike");
+
+//Print list of all workouts
+//console.log(crossFit.workouts);
+
+console.log(crossFit.generateRandomWorkout());
